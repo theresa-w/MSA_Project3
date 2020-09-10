@@ -16,7 +16,7 @@
   <body>
     <div id="background">
       <div id="menu">
-            <div class="container">
+          <div class="container">
               <div class="row">
                       <ul>
                           <li class="selected">Diary</li>
@@ -36,7 +36,7 @@
 
     <div class="container">
       <table class="table table-striped">
-        <button type="button" class="btn btn-primary" id = "new-button" data-toggle="modal" data-target="#newItemModal">Add New Entry</button>
+        <button type="button" class="btn btn-primary" id = "new-button" data-toggle="modal" data-target="#newItemModal">New Entry</button>
         <thead>
           <tr>
             <th scope="col">Date</th>
@@ -61,6 +61,65 @@
         </tbody>
       </table>
     </div>
+<div
+  class="modal fade"
+  id="newItemModal"
+  data-backdrop="static"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="newItemModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newItemModalLabel">New Entry</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/diary/" method="post">
+          <div class="form-group">
+            <label for="diaryDate">Date</label>
+            <input
+              name="diaryDate"
+              type="text"
+              class="form-control"
+              id="taskName"
+              placeholder="Date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="diaryTitle">Title</label>
+            <input
+              name="diaryTitle"
+              type="text"
+              class="form-control"
+              id="taskName"
+              placeholder="Title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="diaryText">Diary Entry</label>
+            <textarea
+              name="text"
+              class="form-control"
+              id="taskDescription"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Javascript support for bootstrap -->
     <script
