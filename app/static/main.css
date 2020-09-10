@@ -1,0 +1,112 @@
+#menu {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#menu ul {
+    list-style-type: none;
+    white-space: nowrap;
+    margin-top: 8px;
+}
+
+#menu li {
+    color: black;
+    font-size: 16px;
+    font-family: "Tahoma";
+    margin-right: 40px;
+    display: inline;
+}
+
+#menu li.selected {
+    color: white;
+}
+
+#background {
+    background-image: url("/static/banner.jpg");
+    background-repeat: no-repeat;
+    background-color: gray;
+    height: 200px;
+    background-size: cover;
+    margin-bottom: 32px;
+}
+
+h1 {
+    color: black;
+    font-size: 60pt;
+    font-family: "fantacy";
+    text-shadow: 4px 4px 16px black;
+}
+
+h3 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 48px;
+    font-family: "fantacy";
+    text-shadow: 4px 4px 8px black;
+}
+
+#uploaded-image {
+    height: 384px;
+}
+
+#view-button {
+    width: 60px;
+    height: 40px;
+    background-color:skyblue;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+#delete-button {
+    width: 63px;
+    height: 40px;
+    background-color:rgb(233, 109, 136);
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+#upload-button {
+    width: 95px;
+    height: 40px;
+    background-color: darkgray;
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+    
+}
+
+#view-button:hover {
+    background-color: blue;
+    
+}
+
+#delete-button:hover {
+    background-color: red;
+    
+}
+
+#upload-button:hover {
+    background-color: gray;
+    
+}
+
+#language {
+    width: 256px;
+    margin: 32px auto;
+}
+
+#uploaded-image {
+    display: block;
+    margin: 32px auto;
+}
