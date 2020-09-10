@@ -52,7 +52,17 @@
             <td>
               <a href="#"><button type="button" class="btn btn-primary" id="view-button">View</button></a>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-danger" id="delete-button"> Delete </button>
+              <button
+              type="button"
+              id = 'delete-button'
+              data-item-id="{{entry.date}}"
+              data-toggle="modal"
+              data-target="#deleteModal"
+              class="btn btn-danger"
+              onclick="{setDeleteId(this)}"
+            >
+              Delete
+            </button>
               <button type="button" class="btn btn-primary" id="upload-button"> Upload Image </button>
             </td>
           </tr>
@@ -121,6 +131,47 @@
   </div>
 </div>
 
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Deleting...?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You don't want to remember this story?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id = 'cancel-button' data-dismiss="modal">
+          Let me rethink this...
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          id = 'delete-button'
+          onClick="deleteTask(deleteId)"
+        >
+         Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Javascript support for bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -137,5 +188,18 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script>
+      var deleteId = 0;
+      function setDeleteId(event) {
+        deleteId = event.dataset.itemId;
+      }
+      function deleteTask(date) {
+        fetch("/diary/" + date, {
+          method: "DELETE",
+        })
+          .then(() => window.location.reload())
+          .catch((error) => console.log("Error: " + error));
+      }
+    </script>
   </body>
 </html>

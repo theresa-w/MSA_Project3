@@ -8,5 +8,5 @@ class Diary(db.Model):
     text = db.Column(db.String(1028))
 
     def __repr__(self):
-        return '<Diary %r - ' % self.date, self.title
+        return '<Diary %r - ' % self.date, self.title, self.text
 

@@ -100,6 +100,19 @@ h3 {
     
 }
 
+#cancel-button {
+    width: 95px;
+    height: 40px;
+    background-color: darkgray;
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+    
+}
+
 #view-button:hover {
     background-color: blue;
     
@@ -116,6 +129,11 @@ h3 {
 }
 
 #upload-button:hover {
+    background-color: gray;
+    
+}
+
+#cancel-button:hover {
     background-color: gray;
     
 }

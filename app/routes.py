@@ -26,3 +26,24 @@ def add_item():
     db.session.add(new_entry)
     db.session.commit()
     return redirect(url_for('index'))
+
+
+
+@app.route('/diary/<date>', methods=['DELETE'])
+def delete_task(date):
+    entry = Diary.query.filter_by(date=date).first()
+    
+    # Check if Task exists
+    if (entry != None):
+        msg = {
+            'message': 'Successful Delete'
+        }
+        db.session.delete(entry)
+        db.session.commit()
+        return jsonify(msg), 200
+	
+    # Task does not exist
+    msg = {
+        'message': 'No Entry found'
+    }
+    return jsonify(msg), 204
