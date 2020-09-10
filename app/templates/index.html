@@ -26,7 +26,8 @@
                       </ul>
                   </div>
               </div>
-          </div>
+          
+        </div>
       <div class="container text-center">
           <h1>Diary</h1>
           <h3>Jotting Down Memories Piece by Piece...</h3>
@@ -35,13 +36,12 @@
 
     <div class="container">
       <table class="table table-striped">
+        <button type="button" class="btn btn-primary" id = "new-button" data-toggle="modal" data-target="#newItemModal">Add New Entry</button>
         <thead>
           <tr>
             <th scope="col">Date</th>
             <th scope="col">Title</th>
-            <th scope="col"></th>
             <th scope="col">Actions</th>
-            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -52,11 +52,7 @@
             <td>
               <a href="#"><button type="button" class="btn btn-primary" id="view-button">View</button></a>
               <!-- Button trigger modal -->
-            </td>
-            <td>
               <button type="button" class="btn btn-danger" id="delete-button"> Delete </button>
-            </td>
-            <td>
               <button type="button" class="btn btn-primary" id="upload-button"> Upload Image </button>
             </td>
           </tr>

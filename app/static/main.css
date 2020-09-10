@@ -86,8 +86,27 @@ h3 {
     
 }
 
+#new-button {
+    width: 120px;
+    height: 40px;
+    background-color: lightsalmon;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+    margin: 3px;
+    
+}
+
 #view-button:hover {
     background-color: blue;
+    
+}
+
+#new-button:hover {
+    background-color: orange;
     
 }
 
