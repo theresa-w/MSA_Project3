@@ -1,0 +1,100 @@
+<div
+  class="modal fade"
+  id="newItemModal"
+  data-backdrop="static"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="newItemModalLabel"
+  aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newItemModalLabel">New Entry</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/diary/" method="post">
+          <div class="form-group">
+            <label for="diaryDate">Date</label>
+            <input
+              name="diaryDate"
+              type="text"
+              class="form-control"
+              id="taskName"
+              placeholder="Date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="diaryTitle">Title</label>
+            <input
+              name="diaryTitle"
+              type="text"
+              class="form-control"
+              id="taskName"
+              placeholder="Title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="diaryText">Diary Entry</label>
+            <textarea
+              name="text"
+              class="form-control"
+              id="taskDescription"
+              rows="3"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Deleting...?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You don't want to remember this story?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id = 'cancel-button' data-dismiss="modal">
+          Let me rethink this...
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          id = 'delete-button'
+          onClick="deleteEntry(deleteDate)"
+        >
+         Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
