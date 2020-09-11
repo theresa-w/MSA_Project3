@@ -1,5 +1,5 @@
 from app import app, models, db
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, jsonify
 
 Diary = models.Diary
 
@@ -30,7 +30,7 @@ def add_item():
 
 
 @app.route('/diary/<date>', methods=['DELETE'])
-def delete_task(date):
+def delete_entry(date):
     entry = Diary.query.filter_by(date=date).first()
     
     # Check if Task exists
@@ -47,3 +47,24 @@ def delete_task(date):
         'message': 'No Entry found'
     }
     return jsonify(msg), 204
+
+
+
+@app.route('/diary/<date>', methods=['GET', 'POST'])
+def view_entry(date):
+    if (request.method == "GET"):
+        entry = Diary.query.filter_by(date=date).first()
+        return render_template('view_task.html', dairyDate=entry.date, diaryTitle=entry.title, diaryText=entry.text)
+    elif (request.method == "POST"):
+        diaryDate = request.form.get('diaryDate')
+        diaryTitle = request.form.get('diaryTitle')
+        diaryText = request.form.get('diaryText')
+
+        entry = Diary.query.filter_by(date=date).first()
+        if (entry != None):
+            entry.date = diaryDate
+            entry.title = diaryTitle
+            entry.text = diaryText
+            db.session.add(entry)
+            db.session.commit()
+        return redirect(url_for('index'))
