@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block body %}
     <div class="container">
-        <form action="/diary/{diaryDate}" method="post">
-            <input name="taskId" type="text" class="form-control d-none" id="inputId" value="{{diaryDate}}">
+        <form action="/diary/{{diaryDate}}" method="post">
+            <input name="diaryDate" type="text" class="form-control d-none" id="inputId" value="{{diaryDate}}">
             <div class="form-group">
               <label for="inputName">Entry Date</label>
-              <input name="taskName" type="text" class="form-control" id="inputName" value="{{diaryDate}}">
+              <input name="diaryDate" type="text" class="form-control" id="inputName" value="{{diaryDate}}">
             </div>
             <div class="form-group">
                 <label for="inputName">Entry Title</label>
-                <input name="taskName" type="text" class="form-control" id="inputName" value="{{diaryTitle}}">
+                <input name="diaryTitle" type="text" class="form-control" id="inputName" value="{{diaryTitle}}">
               </div>
             <div class="form-group">
                 <label for="taskDescription">Entry Text</label>
-                <textarea name="taskDescription" class="form-control" id="taskDescription" rows="4">{{diaryText}}</textarea>
+                <textarea name="diaryText" class="form-control" id="taskDescription" rows="4">{{diaryText}}</textarea>
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
